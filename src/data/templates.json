@@ -1,0 +1,22 @@
+[
+  {
+    "id": "showBtn",
+    "title": "Button",
+    "component": "btn1"
+  },
+  {
+    "id": "showDrop",
+    "title": "Dropdown",
+    "component": "drop1"
+  },
+  {
+    "id": "showRight",
+    "title": "ShowRight",
+    "component": "rDrop"
+  },
+  {
+    "id": "showLeft",
+    "title": "ShowLeft",
+    "component": "lDrop"
+  }
+]

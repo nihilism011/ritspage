@@ -10,7 +10,23 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      age: 0,
+      checkMsg: "",
+    };
+  },
+  methods: {
+    check() {
+      if (this.age >= 30) {
+        this.checkMsg = "이상";
+      } else {
+        this.checkMsg = "이하";
+      }
+    },
+  },
+};
 </script>
 
 <style scoped lang="scss">
