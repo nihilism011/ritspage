@@ -1,15 +1,5 @@
 <template>
   <div class="templates-board">
-    <div id="contents">
-      <div v-for="item in templates" :key="item.id" :id="item.id">
-        <h2>{{ item.title }}</h2>
-        <div class="display">
-          <div class="show-box">
-            <component :is="item.component" />
-          </div>
-        </div>
-      </div>
-    </div>
     <div id="templatesNavi">
       <h3>Menu</h3>
       <div
@@ -18,6 +8,16 @@
         @click="scrollShowBox(item.id)"
       >
         {{ item.title }}
+      </div>
+    </div>
+    <div id="contents">
+      <div v-for="item in templates" :key="item.id" :id="item.id">
+        <h2>{{ item.title }}</h2>
+        <div class="display">
+          <div class="show-box">
+            <component :is="item.component" />
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -92,6 +92,19 @@ export default {
     padding: 10px;
     border-radius: 5px;
     margin-bottom: 15px;
+  }
+
+  & div {
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    transition: background-color 0.3s, color 0.3s;
+  }
+
+  & div:hover {
+    background-color: #6fbfea;
+    color: darkslateblue;
   }
 }
 </style>
