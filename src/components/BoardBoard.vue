@@ -10,13 +10,25 @@
 </template>
 
 <script>
+import axios from "axios";
 export default {
   data() {
     return {
-      rist: [],
+      list: [],
     };
   },
-  methods: {},
+
+  methods: {
+    async listUp() {
+      const a = await axios.post(`http://211.244.81.98/aaa/aaa`, {
+        id: "mins",
+      });
+      console.log(a.data);
+    },
+  },
+  mounted() {
+    this.listUp();
+  },
 };
 </script>
 

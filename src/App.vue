@@ -10,6 +10,7 @@
         <a @click="bState = 'main'">Home</a>
         <a @click="bState = 'keyboard'">Keyboard</a>
         <a @click="bState = 'templates'">Templates</a>
+        <a @click="bState = 'BoardBoard'">BoardBoard</a>
       </div>
       <MainBoard v-show="bState === 'main'" />
       <KeyboardBoard
@@ -18,6 +19,7 @@
         @name-click="nameClick"
       />
       <TemplatesBoard v-show="bState === 'templates'" />
+      <BoardBoard v-show="bState === 'BoardBoard'"></BoardBoard>
       <button @click="darkMode" id="darkBtn">
         <img :src="darkModeImage" alt="다크모드 전환" />
       </button>
@@ -29,12 +31,14 @@
 import MainBoard from "./components/MainBoard.vue";
 import KeyboardBoard from "./components/KeyboardBoard.vue";
 import TemplatesBoard from "./components/TemplatesBoard.vue";
+import BoardBoard from "./components/BoardBoard.vue";
 
 export default {
   components: {
     MainBoard,
     KeyboardBoard,
     TemplatesBoard,
+    BoardBoard,
   },
   data() {
     return {
