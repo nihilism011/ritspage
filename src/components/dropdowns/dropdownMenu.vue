@@ -1,9 +1,11 @@
 <template>
-  <div class="btn-box">
-    <button class="R-btn1">Click!</button>
-    <button class="R-btn2">Click!</button>
-    <button class="R-btn3">Click!</button>
-    <button class="R-btn4">Click!</button>
+  <div class="dropdown">
+    <select name="" id="">
+      <option style="display: none">select</option>
+      <option>option1</option>
+      <option>option2</option>
+      <option>option3</option>
+    </select>
   </div>
 </template>
 
@@ -12,68 +14,52 @@ export default {};
 </script>
 
 <style scoped lang="scss">
-.R-btn1 {
-  margin: 1rem;
-  color: #6fbfea;
-  transition: 0.3s;
+/* 전체 드롭다운 스타일 */
+.dropdown select {
+  appearance: none; /* 기본 브라우저 스타일 제거 */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
   border-radius: 4px;
-  border: 1px solid #6fbfea;
-  padding: 0.5rem 1rem;
+  padding: 10px 38px 10px 16px;
+  font-size: 16px;
   cursor: pointer;
-  background-color: white;
-  font-size: 1rem;
-  &:hover {
-    background-color: #6fbfea;
-    color: white;
-  }
-}
-.R-btn2 {
-  margin: 1rem;
-  color: white;
-  transition: 0.3s;
-  border-radius: 4px;
-  border: 1px solid white;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-  background-color: #6fbfea;
-  font-size: 1rem;
-
-  &:hover {
-    background-color: white;
-    color: #6fbfea;
-    border: 1px solid #6fbfea;
-  }
-}
-.R-btn3 {
-  margin: 1rem;
-  color: #fff;
-  background-color: #ff4b5c;
-  transition: 0.3s;
-  border-radius: 4px;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-  border: none;
-  font-size: 1rem;
-
-  &:hover {
-    background-color: #ff1c3d;
-  }
+  transition: border-color 0.3s, box-shadow 0.3s;
 }
 
-.R-btn4 {
-  margin: 1rem;
-  color: #fff;
-  background-color: #6fbfea;
-  transition: background-color 0.3s, transform 0.3s;
-  border-radius: 4px;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-  border: none;
-  font-size: 1rem;
+/* 드롭다운 아이콘 */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
 
-  &:hover {
-    background-color: #5ba6d1;
-    transform: scale(1.05);
-  }
+.dropdown::after {
+  content: "\25BC"; /* 화살표 아이콘 */
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  transition: color 0.3s;
+}
+
+/* 호버 효과 */
+.dropdown select:hover,
+.dropdown select:focus {
+  border-color: #888;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown select:hover::after,
+.dropdown select:focus::after {
+  color: #555;
+}
+
+/* 드롭다운 옵션 스타일 */
+.dropdown select option {
+  padding: 10px;
+  background-color: #ffffff;
+  color: #333;
 }
 </style>
