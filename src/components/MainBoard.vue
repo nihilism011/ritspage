@@ -6,6 +6,7 @@
     <div>Templates 탭 50%완료 네비게이션 이식 예정</div>
     <div>탭 추가 예정</div>
     <div class="box"></div>
+    <button>회원가입</button>
   </div>
 </template>
 

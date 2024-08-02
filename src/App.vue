@@ -10,8 +10,8 @@
         <a @click="bState = 'main'">Home</a>
         <a @click="bState = 'keyboard'">Keyboard</a>
         <a @click="bState = 'templates'">Templates</a>
-        <a @click="bState = 'BoardBoard'">BoardBoard</a>
       </div>
+
       <MainBoard v-show="bState === 'main'" />
       <KeyboardBoard
         v-show="bState === 'keyboard'"
@@ -31,14 +31,12 @@
 import MainBoard from "./components/MainBoard.vue";
 import KeyboardBoard from "./components/KeyboardBoard.vue";
 import TemplatesBoard from "./components/TemplatesBoard.vue";
-import BoardBoard from "./components/BoardBoard.vue";
 
 export default {
   components: {
     MainBoard,
     KeyboardBoard,
     TemplatesBoard,
-    BoardBoard,
   },
   data() {
     return {
